@@ -28,7 +28,6 @@ namespace Application.Features.ProgrammingLanguages.Commands.CreateProgrammingLa
                 _programmingLanguageRepository = programmingLanguageRepository;
                 _programmingLanguageBusinessRules = programmingLanguageBusinessRules;
             }
-
             public async Task<CreatedProgrammingLanguageDto> Handle(CreateProgrammingLanguageCommand request, CancellationToken cancellationToken)
             {
                 await _programmingLanguageBusinessRules.ProgrammingLanguageNameCanNotBeDuplicatedWhenInserted(request.Name);
