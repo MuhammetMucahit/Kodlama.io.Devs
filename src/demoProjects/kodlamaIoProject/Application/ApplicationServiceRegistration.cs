@@ -1,5 +1,6 @@
 ﻿using Application.Features.ProgrammingLanguages.Rules;
 using Application.Features.ProgrammingLanguageTechnologies.Rules;
+using Application.Features.Users.Rules;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,7 @@ namespace Application
 
             services.AddScoped<ProgrammingLanguageBusinessRules>();
             services.AddScoped<ProgrammingLanguageTechnologyBusinessRules>();
+            services.AddScoped<UserBusinessRules>();
 
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
