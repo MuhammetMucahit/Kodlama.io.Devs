@@ -36,11 +36,6 @@ namespace Application.Features.ProgrammingLanguages.Commands.UpdateProgrammingLa
                 await _programmingLanguageBusinessRules.ProgrammingLanguageShouldExistWhenRequested(request.Id);
 
                 ProgrammingLanguage mappedProgrammingLanguage = _mapper.Map<ProgrammingLanguage>(request);
-
-                //GetAsycn methodunda AsNoTracking eklenmezse aşağıdaki gibi yapılmak zorunda yoksa map'li entity verilmiyor.
-                //ProgrammingLanguage? entity = await _programmingLanguageRepository.GetAsync(x => x.Id == request.Id);
-                //entity.Name = request.Name;
-
                 ProgrammingLanguage updatedProgrammingLanguage = await _programmingLanguageRepository.UpdateAsync(mappedProgrammingLanguage);
                 UpdatedProgrammingLanguageDto updatedProgrammingLanguageDto = _mapper.Map<UpdatedProgrammingLanguageDto>(updatedProgrammingLanguage);
 
