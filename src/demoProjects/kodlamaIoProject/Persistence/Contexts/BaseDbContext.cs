@@ -64,7 +64,8 @@ namespace Persistence.Contexts
             modelBuilder.Entity<UserOperationClaim>(a =>
             {
                 a.ToTable("UserOperationClaims").HasKey(k => k.Id);
-                a.Property(p => p.OperationClaimId).HasColumnName("Id");
+                a.Property(p => p.Id).HasColumnName("Id");
+                a.Property(p => p.OperationClaimId).HasColumnName("OperationClaimId");
                 a.Property(p => p.UserId).HasColumnName("UserId");
                 a.HasOne(p => p.OperationClaim);
                 a.HasOne(p => p.User);
